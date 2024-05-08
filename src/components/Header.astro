@@ -2,13 +2,30 @@
 // image import
 
 import {Image} from 'astro:assets';
+import {Icon} from 'astro-icon/components';
 
 import logoImage from '../images/logo.svg'
 ---
 
 
-<header>
+<header class="wrapper header">
     <div class="logo">
-        <Image src={logoImage} alt="logo">
+        <Image src={logoImage} alt="logo" />
     </div>
+    <button>
+        <Icon name= "icon-menu"
+            size={40}
+            />
+    </button>
 </header>
+
+
+<style>
+    .header{
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-block: 1.2rem;
+        min-height: 50px;
+    }
+</style>

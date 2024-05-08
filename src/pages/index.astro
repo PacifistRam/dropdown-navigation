@@ -2,6 +2,10 @@
 // style import 
 import '../styles/global.css'
 
+// component import 
+import Header from '../components/Header.astro'
+import Hero from '../components/Hero.astro'
+
 
 const siteData = {title:"dropdown-navigation || FrontendMentor",
 	description:"frontend mentor challenge of dropdown navigation"
@@ -24,6 +28,7 @@ const {title = siteData.title,description = siteData.description} =  Astro.props
 		<title>{title}</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<Header />
+		<Hero />
 	</body>
 </html>

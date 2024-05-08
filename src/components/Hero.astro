@@ -1,0 +1,87 @@
+---
+// image import
+
+import {Image} from 'astro:assets';
+import heroImageDesktop from '../images/image-hero-desktop.png'
+import heroImageMobile from '../images/image-hero-mobile.png'
+
+import client1 from '../images/client-audiophile.svg'
+import client2 from '../images/client-databiz.svg'
+import client3 from '../images/client-maker.svg'
+import client4 from '../images/client-meet.svg'
+
+const clientImages =[
+    client1,client2,client4,client3
+]
+---
+<section >
+<div class="hero-section">
+    <div class="hero-image">
+        <picture>
+            <source media="(min-width:750px)"  srcset={heroImageDesktop.src}>
+            <img src={heroImageMobile.src} alt=" hero image mobile">
+        </picture>
+    </div>
+    <div class="hero-content">
+        <div class="hero-content-data wrapper">
+            <h1>Make remote work</h1>
+            <p>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
+            <button>Learn more</button>
+        </div>
+        <div class="clients-info wrapper">
+           {clientImages.map(image => (
+            <Image class='client-image' src={image} alt="client image"  width={70}/>
+           ))}
+        </div>
+    </div>
+</div>
+</section>
+
+
+<style>
+   
+    .hero-image{
+        margin-bottom: 6ch;
+    }
+
+    .hero-content-data {
+       text-align: justify;
+       display: grid;
+       grid-template-columns: repeat(1, minmax(0, 1fr));
+       place-items: center;
+       row-gap: 2rem;
+       margin-bottom: 2rem;
+    }
+    .hero-content-data >h1{
+        font-size: 2.2rem;
+        line-height: 2.25rem;
+        font-weight: 700;
+        
+    }
+    .hero-content-data p{
+        font-weight: 500;
+        color: var(--clr-medium-gray) ;
+        text-align:center;
+        
+    }
+
+    .hero-content-data button{
+        background-color:var(--clr-almost-black) ;
+        color: var(--clr-almost-white);
+        padding-inline: 1.2rem;
+        padding-block: 1rem;
+        border-radius: 1rem;
+        font-weight: 700;
+        place-self: center;
+    }
+
+    .clients-info{
+        display: flex;
+        gap:1rem;
+        justify-content: space-between;
+    }
+    .clients-image {
+        flex-basis: 24%;
+        width: 50px;
+    }
+</style>
