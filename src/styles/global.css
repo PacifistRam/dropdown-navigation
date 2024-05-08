@@ -1,0 +1,63 @@
+/* -----reset----------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ul{
+    list-style:none;
+}
+a{
+    text-decoration: none;
+}
+
+* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+h1,h2,h3,h4,h5{
+    font-size: inherit;
+}
+
+/* --------------------reset stop-------- */
+
+:root{
+    --clr-almost-white: hsl(0, 0%, 98%);
+    --clr-medium-gray: hsl(0, 0%, 41%);
+    --clr-almost-black: hsl(0, 0%, 8%);
+
+    --fn-small:0.875rem;
+    --fn-lg:1.125rem;
+    --fn-xl:1.25rem;
+    --fn-2xl:1.5rem;
+    --fn-3xl:1.875rem;
+
+
+}
+
+body {
+    font-family: "Epilogue", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
