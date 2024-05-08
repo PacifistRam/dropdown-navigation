@@ -18,7 +18,7 @@ const clientImages =[
 <div class="hero-section">
     <div class="hero-image">
         <picture>
-            <source media="(min-width:750px)"  srcset={heroImageDesktop.src}>
+            <source media="(min-width:769px)"  srcset={heroImageDesktop.src}>
             <img src={heroImageMobile.src} alt=" hero image mobile">
         </picture>
     </div>
@@ -73,6 +73,13 @@ const clientImages =[
         border-radius: 1rem;
         font-weight: 700;
         place-self: center;
+        transition: all 0.5s ease;
+    }
+    .hero-content-data button:hover{
+        background-color: var(--clr-almost-white);
+        color: var(--clr-almost-black);
+       outline: 1px solid var(--clr-almost-black);
+
     }
 
     .clients-info{
