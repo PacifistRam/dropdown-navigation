@@ -18,9 +18,11 @@ const clientImages =[
 <div class="hero-section">
     <div class="hero-image">
         <picture>
-            <source media="(min-width:769px)"  srcset={heroImageDesktop.src}>
+            <source media="(min-width:769px)"  srcset={heroImageDesktop.src} height= "600px">
             <img src={heroImageMobile.src} alt=" hero image mobile">
         </picture>
+        
+       
     </div>
     <div class="hero-content">
         <div class="hero-content-data wrapper">
@@ -40,9 +42,10 @@ const clientImages =[
 
 <style>
    
-    .hero-image{
+    
+    /* .hero-image{
         margin-bottom: 6ch;
-    }
+    } */
 
     .hero-content-data {
        text-align: justify;
@@ -91,4 +94,36 @@ const clientImages =[
         flex-basis: 24%;
         width: 50px;
     }
+
+    @media screen and (min-width: 769px) {
+        .hero-section{
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            justify-items: center;
+           
+        }
+        .hero-image{
+            margin-bottom: 0;
+            grid-column: 2;
+            grid-row: 1;
+           
+            /* overflow: hidden; */
+            
+           
+        }
+        
+        .hero-content{
+            grid-column: 1;
+            grid-row: 1;
+           display: grid;
+            padding-block: 4rem;
+           justify-content: center;
+           align-content: center;
+        }
+
+        .hero-content-data >h1{
+            font-size: 8ch;
+            line-height: 1.1;
+        }
+    } 
 </style>
