@@ -18,7 +18,7 @@ const clientImages =[
 <div class="hero-section">
     <div class="hero-image">
         <picture>
-            <source media="(min-width:769px)"  srcset={heroImageDesktop.src} height= "600px">
+            <source media="(min-width:769px)"  srcset={heroImageDesktop.src} >
             <img src={heroImageMobile.src} alt=" hero image mobile">
         </picture>
         
@@ -99,14 +99,15 @@ const clientImages =[
         .hero-section{
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            justify-items: center;
-           
+            /* justify-items: center; */
+          gap
         }
         .hero-image{
             margin-bottom: 0;
             grid-column: 2;
             grid-row: 1;
-           
+            width: 70%;
+            margin-left: auto;  
             /* overflow: hidden; */
             
            

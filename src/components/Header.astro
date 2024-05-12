@@ -5,6 +5,7 @@ import {Image} from 'astro:assets';
 import {Icon} from 'astro-icon/components';
 
 import logoImage from '../images/logo.svg'
+
 ---
 
 
@@ -14,12 +15,17 @@ import logoImage from '../images/logo.svg'
     </div>
     <nav id="navBar" class="navbar">
         <button id="close-menu" class="menu-close"><Icon name="icon-close-menu" size={30} /></button>
-        <ul class="nav-links">
-            <li>Features</li>
-            <li> Company</li>
-            <li> Careers</li>
-            <li> About</li>
-        </ul>
+        <div class="nav-links">
+            <div class="dropdown-link"><p><span>Features</span> <Icon id='icon-open' class='nav-icon' name ="icon-arrow-down" /></p></div>
+            <ul class="dropdown-link-ul hidden">
+                <li>Todo List</li>
+                <li>Todo List</li>
+                <li>Todo List</li>
+            </ul>
+            <div class="dropdown-link"><p><span>Company</span> <Icon class="nav-icon" name ="icon-arrow-down" /></p> </div>
+            <div> <p>Careers</p></div>
+            <div>  <p>About</p></div>
+        </div>
         <ul class="nav-cta btn">
             <li>login</li>
             <li>Register</li>
@@ -71,6 +77,15 @@ import logoImage from '../images/logo.svg'
         gap:1.8rem;
         cursor: pointer;
     }
+
+    .dropdown-link p{
+        display: flex;
+        gap: 0.4rem;
+        align-items: center;
+    }
+    .nav-icon{
+        width: 15px;
+    }
     .menu-close{
         align-self: flex-end;
         padding-top: 1.2rem ;
@@ -84,6 +99,21 @@ import logoImage from '../images/logo.svg'
         text-transform: capitalize;
         cursor: pointer;
     }
+    .dropdown-link{
+        position: relative;
+        transition: display 0.3s ease;
+    }
+    .dropdown-link-ul{
+        /* position: absolute; */
+        top: 8rem;
+        padding: 1rem 1.2rem;
+        
+       
+    }
+    .hidden{
+        display: none;
+    }
+
     @media screen and (min-width: 769px) {
         .menu-close,.menu-open{
            display: none;
@@ -132,4 +162,15 @@ import logoImage from '../images/logo.svg'
     menuClose.addEventListener('click',(e)=>{
        navbar.classList.remove('open')
     })
+    
+
+    const dropdownheader = document.querySelector('.dropdown-link') 
+    const dropdownUl = document.querySelector(".dropdown-link-ul")
+    dropdownheader.addEventListener('touchstart',() => {
+        dropdownUl.classList.toggle('hidden')
+        console.log('hello')
+    })
+
+    
+   
 </script>
